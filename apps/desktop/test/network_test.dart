@@ -38,9 +38,9 @@ void main() {
     // VPN ULA plus link-local only: IPv6 cannot reach the internet.
     expect(
       HttpsNetworkInspector.lookupFailure(v6, [
-        ip('192.168.1.10'),
-        ip('10.8.1.2'),
-        ip('fd58:baa6:dead::1'),
+        ip('192.0.2.10'),
+        ip('10.0.0.2'),
+        ip('fd12:3456:789a::1'),
         ip('fe80::1'),
         ip('::1'),
       ]),
@@ -60,7 +60,7 @@ void main() {
       NetworkIssue.familyUnavailable,
     );
     expect(
-      HttpsNetworkInspector.lookupFailure(v4, [ip('10.8.1.2')]),
+      HttpsNetworkInspector.lookupFailure(v4, [ip('10.0.0.2')]),
       NetworkIssue.connectionFailed,
     );
   });
