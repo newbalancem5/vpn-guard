@@ -39,10 +39,14 @@ end
 
 host.add_dependency(filter)
 embed = host.new_copy_files_build_phase('Embed System Extensions')
-embed.dst_subfolder_spec = '1'
+embed.dst_subfolder_spec = '16'
 embed.dst_path = '$(CONTENTS_FOLDER_PATH)/Library/SystemExtensions'
 file = embed.add_file_reference(filter.product_reference)
 file.settings = {'ATTRIBUTES' => ['CodeSignOnCopy', 'RemoveHeadersOnCopy']}
+project.files.select { |ref| ref.path&.end_with?('.framework') }.each do |ref|
+  ref.path = "System/Library/Frameworks/#{File.basename(ref.path)}"
+  ref.source_tree = 'SDKROOT'
+end
 project.save
 scheme = Xcodeproj::XCScheme.new
 scheme.add_build_target(host)

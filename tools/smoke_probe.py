@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 import selectors
+import socket
 import subprocess
 import sys
 
@@ -57,10 +58,13 @@ if __name__ == "__main__":
     for host in ["127.0.0.1", "::1"]:
         check_family(probe, host)
     # A dead endpoint must never pass a --require-echo baseline.
-    result = subprocess.run(
-        [str(probe), "--host", "127.0.0.1", "--port", "1", "--duration", "1", "--require-echo"],
-        capture_output=True, text=True, timeout=5,
-    )
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as reserved:
+        reserved.bind(("127.0.0.1", 0))  # Occupied but not listening: cannot be another service.
+        result = subprocess.run(
+            [str(probe), "--host", "127.0.0.1", "--port", str(reserved.getsockname()[1]),
+             "--duration", "1", "--require-echo"],
+            capture_output=True, text=True, timeout=5,
+        )
     if result.returncode != 2:
         raise RuntimeError("Unreachable endpoint was incorrectly accepted")
     print("PASS unreachable endpoint is not accepted as a successful baseline")

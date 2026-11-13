@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "348087849BE408700601A410"
+               BlueprintIdentifier = "B00A77D3FD08503492E4966D"
                BuildableName = "VPNGuardLab.app"
                BlueprintName = "VPNGuardLab"
                ReferencedContainer = "container:VPNGuardLab.xcodeproj">
@@ -30,7 +30,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "348087849BE408700601A410"
+            BlueprintIdentifier = "B00A77D3FD08503492E4966D"
             BuildableName = "VPNGuardLab.app"
             BlueprintName = "VPNGuardLab"
             ReferencedContainer = "container:VPNGuardLab.xcodeproj">
@@ -53,7 +53,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "348087849BE408700601A410"
+            BlueprintIdentifier = "B00A77D3FD08503492E4966D"
             BuildableName = "VPNGuardLab.app"
             BlueprintName = "VPNGuardLab"
             ReferencedContainer = "container:VPNGuardLab.xcodeproj">
@@ -70,7 +70,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "348087849BE408700601A410"
+            BlueprintIdentifier = "B00A77D3FD08503492E4966D"
             BuildableName = "VPNGuardLab.app"
             BlueprintName = "VPNGuardLab"
             ReferencedContainer = "container:VPNGuardLab.xcodeproj">
