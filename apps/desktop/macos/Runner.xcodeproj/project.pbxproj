@@ -21,13 +21,27 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		05D2DA273D52024F5C2E96AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948FEEBAC935800877867079 /* Security.framework */; };
+		133171483116562DE39BA6D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD5AFEDD628B57B6A795F3F8 /* InfoPlist.strings */; };
 		331C80D8294CF71000263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C80D7294CF71000263BE5 /* RunnerTests.swift */; };
 		335BBD1B22A9A15E00E9071D /* GeneratedPluginRegistrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BBD1A22A9A15E00E9071D /* GeneratedPluginRegistrant.swift */; };
 		33CC10F12044A3C60003C045 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CC10F02044A3C60003C045 /* AppDelegate.swift */; };
 		33CC10F32044A3C60003C045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33CC10F22044A3C60003C045 /* Assets.xcassets */; };
 		33CC10F62044A3C60003C045 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33CC10F42044A3C60003C045 /* MainMenu.xib */; };
 		33CC11132044BFA00003C045 /* MainFlutterWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CC11122044BFA00003C045 /* MainFlutterWindow.swift */; };
+		39162E4DF2F5853AECC9ABAA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7081426E9CFC36C6FEBEC9E9 /* Cocoa.framework */; };
+		3B5E93917470CD85A1898EA5 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7508E7D169DF66875C75772F /* NetworkExtension.framework */; };
+		4F47CE59771253E888CCA2E0 /* SystemExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B37F6B5C8A75AE7263BCFCC /* SystemExtensions.framework */; };
+		5B623F3F6DEF6955FAE578EB /* SystemExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B37F6B5C8A75AE7263BCFCC /* SystemExtensions.framework */; };
+		6979824393B6664EC01BBDBF /* ApplicationBlockPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197FA631E50801BD181D16F /* ApplicationBlockPolicy.swift */; };
+		6AE46EAAC744D824D2D89CC4 /* ApplicationBlockPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A197FA631E50801BD181D16F /* ApplicationBlockPolicy.swift */; };
 		78A318202AECB46A00862997 /* FlutterGeneratedPluginSwiftPackage in Frameworks */ = {isa = PBXBuildFile; productRef = 78A3181F2AECB46A00862997 /* FlutterGeneratedPluginSwiftPackage */; };
+		A8282F5AEC4ED021C87048C6 /* ProbePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAE4175CF5F628E2EA4B30A /* ProbePolicy.swift */; };
+		AD788DF89539F5ECD7214F91 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7508E7D169DF66875C75772F /* NetworkExtension.framework */; };
+		AE7B893EDF8C4963348DD6E0 /* FilterDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35329CF01174D6223894359F /* FilterDataProvider.swift */; };
+		E28A17C6B754C76EAC9B17E2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADD1B306D324F8AB8C836DB /* main.swift */; };
+		F379E089A2639D00CB01B34B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 948FEEBAC935800877867079 /* Security.framework */; };
+		FC1B6BBDDA86700D18ABCF79 /* GuardSystemBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656023EF81FE8155FE6B27DF /* GuardSystemBackend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +59,13 @@
 			remoteGlobalIDString = 33CC111A2044C6BA0003C045;
 			remoteInfo = FLX;
 		};
+		59A08B897F115EEF7EB49606 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33CC10E52044A3C60003C045 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AF0CD5D75519CF6A7C33FC3;
+			remoteInfo = GuardFilter;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,11 +82,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02CB60391A160178F30A1CAE /* en */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		331C80D5294CF71000263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		331C80D7294CF71000263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		333000ED22D3DE5D00554162 /* Warnings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		335BBD1A22A9A15E00E9071D /* GeneratedPluginRegistrant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedPluginRegistrant.swift; sourceTree = "<group>"; };
-		33CC10ED2044A3C60003C045 /* vpn_guard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vpn_guard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33CC10ED2044A3C60003C045 /* vpn_guard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vpn_guard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33CC10F02044A3C60003C045 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33CC10F22044A3C60003C045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Runner/Assets.xcassets; sourceTree = "<group>"; };
 		33CC10F52044A3C60003C045 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -77,9 +99,22 @@
 		33E51913231747F40026EE4D /* DebugProfile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DebugProfile.entitlements; sourceTree = "<group>"; };
 		33E51914231749380026EE4D /* Release.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Release.entitlements; sourceTree = "<group>"; };
 		33E5194F232828860026EE4D /* AppInfo.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppInfo.xcconfig; sourceTree = "<group>"; };
+		35329CF01174D6223894359F /* FilterDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FilterDataProvider.swift; path = ../../../macos/Filter/FilterDataProvider.swift; sourceTree = "<group>"; };
+		590485AE8CA4D1BDB57402D4 /* ru */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = ru; path = Runner/ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		656023EF81FE8155FE6B27DF /* GuardSystemBackend.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GuardSystemBackend.swift; path = Runner/GuardSystemBackend.swift; sourceTree = "<group>"; };
+		7081426E9CFC36C6FEBEC9E9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7508E7D169DF66875C75772F /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		78E0A7A72DC9AD7400C4905E /* FlutterGeneratedPluginSwiftPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FlutterGeneratedPluginSwiftPackage; path = ephemeral/Packages/FlutterGeneratedPluginSwiftPackage; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		7EAE4175CF5F628E2EA4B30A /* ProbePolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProbePolicy.swift; path = ../../../Sources/GuardCore/ProbePolicy.swift; sourceTree = "<group>"; };
+		8B37F6B5C8A75AE7263BCFCC /* SystemExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemExtensions.framework; path = System/Library/Frameworks/SystemExtensions.framework; sourceTree = SDKROOT; };
+		948FEEBAC935800877867079 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		A197FA631E50801BD181D16F /* ApplicationBlockPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationBlockPolicy.swift; path = ../../../Sources/GuardCore/ApplicationBlockPolicy.swift; sourceTree = "<group>"; };
+		AADD1B306D324F8AB8C836DB /* main.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = main.swift; path = ../../../macos/Filter/main.swift; sourceTree = "<group>"; };
+		D256ABE0FCB518D065DF989D /* en */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = en; path = Runner/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E911068971B910E6AC79E40E /* ru */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		EC0C7E62B50A6EDA07444689 /* $(BUNDLE_PREFIX).filter.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = "$(BUNDLE_PREFIX).filter.systemextension"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +130,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				78A318202AECB46A00862997 /* FlutterGeneratedPluginSwiftPackage in Frameworks */,
+				AD788DF89539F5ECD7214F91 /* NetworkExtension.framework in Frameworks */,
+				05D2DA273D52024F5C2E96AA /* Security.framework in Frameworks */,
+				4F47CE59771253E888CCA2E0 /* SystemExtensions.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC39BCBE204AD0F2F6D8D06D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39162E4DF2F5853AECC9ABAA /* Cocoa.framework in Frameworks */,
+				3B5E93917470CD85A1898EA5 /* NetworkExtension.framework in Frameworks */,
+				F379E089A2639D00CB01B34B /* Security.framework in Frameworks */,
+				5B623F3F6DEF6955FAE578EB /* SystemExtensions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +177,12 @@
 				331C80D6294CF71000263BE5 /* RunnerTests */,
 				33CC10EE2044A3C60003C045 /* Products */,
 				D73912EC22F37F3D000D13A0 /* Frameworks */,
+				656023EF81FE8155FE6B27DF /* GuardSystemBackend.swift */,
+				A197FA631E50801BD181D16F /* ApplicationBlockPolicy.swift */,
+				AADD1B306D324F8AB8C836DB /* main.swift */,
+				35329CF01174D6223894359F /* FilterDataProvider.swift */,
+				7EAE4175CF5F628E2EA4B30A /* ProbePolicy.swift */,
+				FD5AFEDD628B57B6A795F3F8 /* InfoPlist.strings */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +191,7 @@
 			children = (
 				33CC10ED2044A3C60003C045 /* vpn_guard.app */,
 				331C80D5294CF71000263BE5 /* RunnerTests.xctest */,
+				EC0C7E62B50A6EDA07444689 /* $(BUNDLE_PREFIX).filter.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,9 +232,21 @@
 			path = Runner;
 			sourceTree = "<group>";
 		};
+		99F60759E09EC97BD60FF435 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				7081426E9CFC36C6FEBEC9E9 /* Cocoa.framework */,
+				7508E7D169DF66875C75772F /* NetworkExtension.framework */,
+				948FEEBAC935800877867079 /* Security.framework */,
+				8B37F6B5C8A75AE7263BCFCC /* SystemExtensions.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
 		D73912EC22F37F3D000D13A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99F60759E09EC97BD60FF435 /* OS X */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -213,11 +281,13 @@
 				33CC10EB2044A3C60003C045 /* Resources */,
 				33CC110E2044A8840003C045 /* Bundle Framework */,
 				3399D490228B24CF009A79C7 /* ShellScript */,
+				D27B660B935D364BED8E3F10 /* Embed Guard Filter */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				33CC11202044C79F0003C045 /* PBXTargetDependency */,
+				6A4A53EDA3510BD3C4427252 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			packageProductDependencies = (
@@ -226,6 +296,23 @@
 			productName = Runner;
 			productReference = 33CC10ED2044A3C60003C045 /* vpn_guard.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3AF0CD5D75519CF6A7C33FC3 /* GuardFilter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A65C0CE14DCAB192004A297F /* Build configuration list for PBXNativeTarget "GuardFilter" */;
+			buildPhases = (
+				6619E443A357C272D5F3E4A2 /* Sources */,
+				AC39BCBE204AD0F2F6D8D06D /* Frameworks */,
+				DE13831FE0881E0C4DF4D525 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GuardFilter;
+			productName = GuardFilter;
+			productReference = EC0C7E62B50A6EDA07444689 /* $(BUNDLE_PREFIX).filter.systemextension */;
+			productType = "com.apple.product-type.system-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -265,10 +352,11 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 33CC10E42044A3C60003C045;
 			packageReferences = (
-				781AD8BC2B33823900A9FFBB /* XCLocalSwiftPackageReference "Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage" */,
+				781AD8BC2B33823900A9FFBB /* XCLocalSwiftPackageReference "FlutterGeneratedPluginSwiftPackage" */,
 			);
 			productRefGroup = 33CC10EE2044A3C60003C045 /* Products */;
 			projectDirPath = "";
@@ -277,6 +365,7 @@
 				33CC10EC2044A3C60003C045 /* Runner */,
 				331C80D4294CF70F00263BE5 /* RunnerTests */,
 				33CC111A2044C6BA0003C045 /* Flutter Assemble */,
+				3AF0CD5D75519CF6A7C33FC3 /* GuardFilter */,
 			);
 		};
 /* End PBXProject section */
@@ -295,6 +384,14 @@
 			files = (
 				33CC10F32044A3C60003C045 /* Assets.xcassets in Resources */,
 				33CC10F62044A3C60003C045 /* MainMenu.xib in Resources */,
+				133171483116562DE39BA6D7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE13831FE0881E0C4DF4D525 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +436,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/macos_assemble.sh && touch Flutter/ephemeral/tripwire";
 		};
+		D27B660B935D364BED8E3F10 /* Embed Guard Filter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(BUNDLE_PREFIX).filter.systemextension",
+			);
+			name = "Embed Guard Filter";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Library/SystemExtensions/$(BUNDLE_PREFIX).filter.systemextension",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\n/usr/bin/ditto \"${BUILT_PRODUCTS_DIR}/${BUNDLE_PREFIX}.filter.systemextension\" \"${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/Library/SystemExtensions/${BUNDLE_PREFIX}.filter.systemextension\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -357,6 +474,19 @@
 				33CC11132044BFA00003C045 /* MainFlutterWindow.swift in Sources */,
 				33CC10F12044A3C60003C045 /* AppDelegate.swift in Sources */,
 				335BBD1B22A9A15E00E9071D /* GeneratedPluginRegistrant.swift in Sources */,
+				FC1B6BBDDA86700D18ABCF79 /* GuardSystemBackend.swift in Sources */,
+				6979824393B6664EC01BBDBF /* ApplicationBlockPolicy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6619E443A357C272D5F3E4A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28A17C6B754C76EAC9B17E2 /* main.swift in Sources */,
+				AE7B893EDF8C4963348DD6E0 /* FilterDataProvider.swift in Sources */,
+				A8282F5AEC4ED021C87048C6 /* ProbePolicy.swift in Sources */,
+				6AE46EAAC744D824D2D89CC4 /* ApplicationBlockPolicy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +503,12 @@
 			target = 33CC111A2044C6BA0003C045 /* Flutter Assemble */;
 			targetProxy = 33CC111F2044C79F0003C045 /* PBXContainerItemProxy */;
 		};
+		6A4A53EDA3510BD3C4427252 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GuardFilter;
+			target = 3AF0CD5D75519CF6A7C33FC3 /* GuardFilter */;
+			targetProxy = 59A08B897F115EEF7EB49606 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -380,9 +516,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				33CC10F52044A3C60003C045 /* Base */,
+				02CB60391A160178F30A1CAE /* en */,
+				E911068971B910E6AC79E40E /* ru */,
 			);
 			name = MainMenu.xib;
 			path = Runner;
+			sourceTree = "<group>";
+		};
+		FD5AFEDD628B57B6A795F3F8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D256ABE0FCB518D065DF989D /* en */,
+				590485AE8CA4D1BDB57402D4 /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -436,6 +583,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_PREFIX = org.vpnguard.vpnGuard;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -485,7 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Runner/DebugProfile.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(VPN_GUARD_HOST_ENTITLEMENTS)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -495,6 +643,7 @@
 				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
+				VPN_GUARD_HOST_ENTITLEMENTS = Runner/DebugProfile.entitlements;
 			};
 			name = Profile;
 		};
@@ -512,6 +661,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_PREFIX = org.vpnguard.vpnGuard;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -568,6 +718,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_PREFIX = org.vpnguard.vpnGuard;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -617,7 +768,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Runner/DebugProfile.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(VPN_GUARD_HOST_ENTITLEMENTS)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -628,6 +779,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				VPN_GUARD_HOST_ENTITLEMENTS = Runner/DebugProfile.entitlements;
 			};
 			name = Debug;
 		};
@@ -637,7 +789,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Runner/Release.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "$(VPN_GUARD_HOST_ENTITLEMENTS)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Runner/Info.plist;
@@ -647,6 +799,7 @@
 				);
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
+				VPN_GUARD_HOST_ENTITLEMENTS = Runner/Release.entitlements;
 			};
 			name = Release;
 		};
@@ -663,6 +816,84 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		43C9F038630C7FE525F3664D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "$(VPN_GUARD_FILTER_ENTITLEMENTS)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ../../../macos/Filter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_PREFIX).filter";
+				PRODUCT_MODULE_NAME = GuardFilter;
+				PRODUCT_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		636DC53EBDC5EB52F090C5AB /* Profile */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "$(VPN_GUARD_FILTER_ENTITLEMENTS)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ../../../macos/Filter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_PREFIX).filter";
+				PRODUCT_MODULE_NAME = GuardFilter;
+				PRODUCT_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Profile;
+		};
+		98C11B0F548407154EB7B2BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "$(VPN_GUARD_FILTER_ENTITLEMENTS)";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ../../../macos/Filter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(BUNDLE_PREFIX).filter";
+				PRODUCT_MODULE_NAME = GuardFilter;
+				PRODUCT_NAME = "$(PRODUCT_BUNDLE_IDENTIFIER)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -709,10 +940,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A65C0CE14DCAB192004A297F /* Build configuration list for PBXNativeTarget "GuardFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98C11B0F548407154EB7B2BB /* Release */,
+				43C9F038630C7FE525F3664D /* Debug */,
+				636DC53EBDC5EB52F090C5AB /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		781AD8BC2B33823900A9FFBB /* XCLocalSwiftPackageReference "Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage" */ = {
+		781AD8BC2B33823900A9FFBB /* XCLocalSwiftPackageReference "FlutterGeneratedPluginSwiftPackage" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage;
 		};

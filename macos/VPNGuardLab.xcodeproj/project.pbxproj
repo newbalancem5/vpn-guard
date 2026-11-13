@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0304B3EE4E47FD821729A477 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3B812ED74978C0E5912BB9 /* Cocoa.framework */; };
+		089AD7ACB4087D5704354144 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6E4BEC93F0AEDA09BD53AD93 /* InfoPlist.strings */; };
 		13574F5405888702EF0F92D0 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294C4DDFFE73931DBE41F967 /* AppKit.framework */; };
-		3BBE517C5E2F2B6C821B1041 /* org.vpnguard.prototype.filter.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 05F8148469AE9F1869DD528E /* org.vpnguard.prototype.filter.systemextension */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4C0C7C6781060B24147126A5 /* ProbePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81EDD55F8117F945775EEF9 /* ProbePolicy.swift */; };
 		5096AD34822B1CCBB9D697B6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83144DE96446A031E99840AC /* main.swift */; };
+		55C718381C9C78E2FE4761AC /* ApplicationBlockPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5182355239C6780E17E3E99B /* ApplicationBlockPolicy.swift */; };
 		5A8B584F1D390BF514B46554 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079290A306E51AC05617E52D /* Security.framework */; };
 		6708EC7E2772481C84C8FCEF /* FilterDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65298EB08A1FD8C01135027E /* FilterDataProvider.swift */; };
 		71BAE730B669CB5CCC24BA20 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECF635837E3B947A6113C7B /* NetworkExtension.framework */; };
@@ -19,6 +20,7 @@
 		89407A55CFB300A2544A8A18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4561771C8AD734646E9AAC67 /* main.swift */; };
 		95252C51595D8B85C95A64CB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3B812ED74978C0E5912BB9 /* Cocoa.framework */; };
 		A082725915EA3F9AFB1CA0CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079290A306E51AC05617E52D /* Security.framework */; };
+		A1210F38A6A24B699C88EB5F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11FCCDED96897A9F986143E0 /* Localizable.strings */; };
 		A2377196EA5573940C041372 /* SystemExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F53B0C5AAA7533B5DD1A0 /* SystemExtensions.framework */; };
 		ABFA84EC268F3DB78D5F3D27 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294C4DDFFE73931DBE41F967 /* AppKit.framework */; };
 		D47760B7CF0982C0905358AD /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECF635837E3B947A6113C7B /* NetworkExtension.framework */; };
@@ -34,31 +36,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		84847B492A9DAA78014775AF /* Embed System Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Library/SystemExtensions";
-			dstSubfolderSpec = 16;
-			files = (
-				3BBE517C5E2F2B6C821B1041 /* org.vpnguard.prototype.filter.systemextension in Embed System Extensions */,
-			);
-			name = "Embed System Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		05F8148469AE9F1869DD528E /* org.vpnguard.prototype.filter.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = org.vpnguard.prototype.filter.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F8148469AE9F1869DD528E /* $(BUNDLE_PREFIX).filter.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = "$(BUNDLE_PREFIX).filter.systemextension"; sourceTree = BUILT_PRODUCTS_DIR; };
 		079290A306E51AC05617E52D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1831DDFBAE5A899F72E28140 /* en */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = en; path = Host/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1E3B812ED74978C0E5912BB9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1ECF635837E3B947A6113C7B /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		294C4DDFFE73931DBE41F967 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4561771C8AD734646E9AAC67 /* main.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = main.swift; path = Host/main.swift; sourceTree = "<group>"; };
+		5182355239C6780E17E3E99B /* ApplicationBlockPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApplicationBlockPolicy.swift; path = ../Sources/GuardCore/ApplicationBlockPolicy.swift; sourceTree = "<group>"; };
 		65298EB08A1FD8C01135027E /* FilterDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FilterDataProvider.swift; path = Filter/FilterDataProvider.swift; sourceTree = "<group>"; };
+		6EAD83EAB1D6F986C7DD947E /* ru */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = ru; path = Host/ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83144DE96446A031E99840AC /* main.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = main.swift; path = Filter/main.swift; sourceTree = "<group>"; };
+		8CD02A4E0927AD2007EB0099 /* ru */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = ru; path = Host/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C3602B004A5B42E048BB44A0 /* VPNGuardLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPNGuardLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81EDD55F8117F945775EEF9 /* ProbePolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ProbePolicy.swift; path = ../Sources/GuardCore/ProbePolicy.swift; sourceTree = "<group>"; };
+		F2153D80B3FE60E8E424149A /* en */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = en; path = Host/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F87F53B0C5AAA7533B5DD1A0 /* SystemExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemExtensions.framework; path = System/Library/Frameworks/SystemExtensions.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -99,6 +92,9 @@
 				83144DE96446A031E99840AC /* main.swift */,
 				65298EB08A1FD8C01135027E /* FilterDataProvider.swift */,
 				E81EDD55F8117F945775EEF9 /* ProbePolicy.swift */,
+				11FCCDED96897A9F986143E0 /* Localizable.strings */,
+				6E4BEC93F0AEDA09BD53AD93 /* InfoPlist.strings */,
+				5182355239C6780E17E3E99B /* ApplicationBlockPolicy.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				C3602B004A5B42E048BB44A0 /* VPNGuardLab.app */,
-				05F8148469AE9F1869DD528E /* org.vpnguard.prototype.filter.systemextension */,
+				05F8148469AE9F1869DD528E /* $(BUNDLE_PREFIX).filter.systemextension */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,7 +144,7 @@
 			);
 			name = GuardFilter;
 			productName = GuardFilter;
-			productReference = 05F8148469AE9F1869DD528E /* org.vpnguard.prototype.filter.systemextension */;
+			productReference = 05F8148469AE9F1869DD528E /* $(BUNDLE_PREFIX).filter.systemextension */;
 			productType = "com.apple.product-type.system-extension";
 		};
 		B00A77D3FD08503492E4966D /* VPNGuardLab */ = {
@@ -158,7 +154,7 @@
 				3C4119D8E41B29C702992158 /* Sources */,
 				4C0DE889A91FABADF57FA361 /* Frameworks */,
 				DC28A85C9520882316B6F5BA /* Resources */,
-				84847B492A9DAA78014775AF /* Embed System Extensions */,
+				B5697AC7A85E06524B037563 /* Embed System Extension */,
 			);
 			buildRules = (
 			);
@@ -185,7 +181,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				ru,
 			);
 			mainGroup = 11969B71E136F9FCFD2C6611;
 			minimizedProjectReferenceProxies = 0;
@@ -212,10 +208,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1210F38A6A24B699C88EB5F /* Localizable.strings in Resources */,
+				089AD7ACB4087D5704354144 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5697AC7A85E06524B037563 /* Embed System Extension */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(BUNDLE_PREFIX).filter.systemextension",
+			);
+			name = "Embed System Extension";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(TARGET_BUILD_DIR)/$(CONTENTS_FOLDER_PATH)/Library/SystemExtensions/$(BUNDLE_PREFIX).filter.systemextension",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -eu\n/usr/bin/ditto \"${BUILT_PRODUCTS_DIR}/${BUNDLE_PREFIX}.filter.systemextension\" \"${TARGET_BUILD_DIR}/${CONTENTS_FOLDER_PATH}/Library/SystemExtensions/${BUNDLE_PREFIX}.filter.systemextension\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C4119D8E41B29C702992158 /* Sources */ = {
@@ -233,6 +254,7 @@
 				5096AD34822B1CCBB9D697B6 /* main.swift in Sources */,
 				6708EC7E2772481C84C8FCEF /* FilterDataProvider.swift in Sources */,
 				4C0C7C6781060B24147126A5 /* ProbePolicy.swift in Sources */,
+				55C718381C9C78E2FE4761AC /* ApplicationBlockPolicy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +268,27 @@
 			targetProxy = 9A65FC44180FDAA04B710006 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11FCCDED96897A9F986143E0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2153D80B3FE60E8E424149A /* en */,
+				8CD02A4E0927AD2007EB0099 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		6E4BEC93F0AEDA09BD53AD93 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1831DDFBAE5A899F72E28140 /* en */,
+				6EAD83EAB1D6F986C7DD947E /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1F1D6E18D10B56BE4130BBE8 /* Release */ = {

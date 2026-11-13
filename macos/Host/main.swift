@@ -6,24 +6,31 @@ final class AppDelegate: NSObject, NSApplicationDelegate, OSSystemExtensionReque
     private var extensionID: String { Bundle.main.bundleIdentifier! + ".filter" }
     private var window: NSWindow!
     private let status = NSTextField(wrappingLabelWithString:
-        "Экспериментальный прототип. Защита VPN не реализована и не проверена.")
+        NSLocalizedString("initialStatus", comment: ""))
     private var buttons: [NSButton] = []
 
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        window?.makeKeyAndOrderFront(nil)
+        return true
+    }
+
     func applicationDidFinishLaunching(_ notification: Notification) {
-        window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 330),
+        window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 740, height: 330),
                           styleMask: [.titled, .closable, .miniaturizable], backing: .buffered, defer: false)
-        window.title = "VPN Guard — лаборатория macOS"
-        let title = NSTextField(labelWithString: "Проверка блокировки guard-probe")
+        // Retain the AppKit window when its close button is used so the dock
+        // reopen handler cannot reference a window released by NSWindow.close().
+        window.isReleasedWhenClosed = false
+        window.title = NSLocalizedString("windowTitle", comment: "")
+        let title = NSTextField(labelWithString: NSLocalizedString("heading", comment: ""))
         title.font = .boldSystemFont(ofSize: 20)
         let description = NSTextField(wrappingLabelWithString:
-            "Фильтр блокирует только тестовый процесс guard-probe по идентификатору подписи. " +
-            "Установка требует подписи Apple Developer и системного разрешения. " +
-            "Сначала запустите baseline, затем включите фильтр и повторите тест.")
+            NSLocalizedString("description", comment: ""))
         let actions = NSStackView()
         actions.orientation = .horizontal
-        for (label, action) in [("1. Установить", #selector(activate)),
-                                ("2. Включить", #selector(enable)),
-                                ("Удалить фильтр", #selector(remove))] {
+        for (label, action) in [(NSLocalizedString("install", comment: ""), #selector(activate)),
+                                (NSLocalizedString("enable", comment: ""), #selector(enable)),
+                                (NSLocalizedString("disable", comment: ""), #selector(disable)),
+                                (NSLocalizedString("removeFilter", comment: ""), #selector(remove))] {
             let button = NSButton(title: label, target: self, action: action)
             button.bezelStyle = .rounded
             buttons.append(button)
@@ -43,6 +50,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, OSSystemExtensionReque
         window.center()
         window.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
+        let menu = NSMenu()
+        let appItem = NSMenuItem()
+        let appMenu = NSMenu()
+        appMenu.addItem(withTitle: NSLocalizedString("quit", comment: ""),
+                        action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        appItem.submenu = appMenu
+        menu.addItem(appItem)
+        NSApp.mainMenu = menu
     }
 
     private func report(_ message: String, busy: Bool = false) {
@@ -52,21 +67,21 @@ final class AppDelegate: NSObject, NSApplicationDelegate, OSSystemExtensionReque
     }
 
     @objc private func activate() {
-        report("Ожидание установки и системного разрешения…", busy: true)
+        report(NSLocalizedString("installing", comment: ""), busy: true)
         let request = OSSystemExtensionRequest.activationRequest(forExtensionWithIdentifier: extensionID, queue: .main)
         request.delegate = self
         OSSystemExtensionManager.shared.submitRequest(request)
     }
 
     @objc private func enable() {
-        report("Сохранение конфигурации тестового фильтра…", busy: true)
+        report(NSLocalizedString("saving", comment: ""), busy: true)
         let manager = NEFilterManager.shared()
         manager.loadFromPreferences { error in
             DispatchQueue.main.async {
                 if let error { self.report(error.localizedDescription); return }
                 if let existing = manager.providerConfiguration,
                    existing.filterDataProviderBundleIdentifier != self.extensionID {
-                    self.report("Обнаружена другая конфигурация: она не будет перезаписана.")
+                    self.report(NSLocalizedString("existingConfig", comment: ""))
                     return
                 }
                 let configuration = NEFilterProviderConfiguration()
@@ -74,12 +89,38 @@ final class AppDelegate: NSObject, NSApplicationDelegate, OSSystemExtensionReque
                 configuration.filterPackets = false
                 configuration.filterDataProviderBundleIdentifier = self.extensionID
                 manager.providerConfiguration = configuration
-                manager.localizedDescription = "VPN Guard — block-only probe experiment"
+                manager.localizedDescription = NSLocalizedString("filterDescription", comment: "")
                 manager.isEnabled = true
                 manager.saveToPreferences { error in
                     DispatchQueue.main.async {
                         self.report(error?.localizedDescription ??
-                            "Конфигурация сохранена. Работа фильтра ещё не подтверждена: проверьте журнал и трафик guard-probe.")
+                            NSLocalizedString("saved", comment: ""))
+                    }
+                }
+            }
+        }
+    }
+
+    @objc private func disable() {
+        report(NSLocalizedString("disabling", comment: ""), busy: true)
+        let manager = NEFilterManager.shared()
+        manager.loadFromPreferences { error in
+            DispatchQueue.main.async {
+                if let error { self.report(error.localizedDescription); return }
+                guard let configuration = manager.providerConfiguration else {
+                    self.report(NSLocalizedString("alreadyDisabled", comment: "")); return
+                }
+                guard configuration.filterDataProviderBundleIdentifier == self.extensionID else {
+                    self.report(NSLocalizedString("otherConfigUnchanged", comment: "")); return
+                }
+                guard manager.isEnabled else {
+                    self.report(NSLocalizedString("alreadyDisabled", comment: "")); return
+                }
+                manager.isEnabled = false
+                manager.saveToPreferences { error in
+                    DispatchQueue.main.async {
+                        self.report(error?.localizedDescription ??
+                            NSLocalizedString("disabled", comment: ""))
                     }
                 }
             }
@@ -88,19 +129,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate, OSSystemExtensionReque
 
     @objc private func remove() {
         let alert = NSAlert()
-        alert.messageText = "Удалить тестовый фильтр?"
-        alert.informativeText = "После удаления guard-probe сможет выходить в сеть без этой блокировки."
-        alert.addButton(withTitle: "Удалить")
-        alert.addButton(withTitle: "Отмена")
+        alert.messageText = NSLocalizedString("removeTitle", comment: "")
+        alert.informativeText = NSLocalizedString("removeExplanation", comment: "")
+        alert.addButton(withTitle: NSLocalizedString("remove", comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("cancel", comment: ""))
         guard alert.runModal() == .alertFirstButtonReturn else { return }
-        report("Удаление собственной конфигурации…", busy: true)
+        report(NSLocalizedString("removing", comment: ""), busy: true)
         let manager = NEFilterManager.shared()
         manager.loadFromPreferences { error in
             DispatchQueue.main.async {
                 if let error { self.report(error.localizedDescription); return }
                 guard let configuration = manager.providerConfiguration else { self.deactivate(); return }
                 guard configuration.filterDataProviderBundleIdentifier == self.extensionID else {
-                    self.report("Другая конфигурация не изменена.")
+                    self.report(NSLocalizedString("otherConfigUnchanged", comment: ""))
                     return
                 }
                 manager.removeFromPreferences { error in
@@ -120,24 +161,29 @@ final class AppDelegate: NSObject, NSApplicationDelegate, OSSystemExtensionReque
     }
 
     func requestNeedsUserApproval(_ request: OSSystemExtensionRequest) {
-        report("macOS ожидает разрешения системного расширения в Настройках системы.", busy: true)
+        report(NSLocalizedString("approvalNeeded", comment: ""), busy: true)
     }
 
     func request(_ request: OSSystemExtensionRequest, didFinishWithResult result: OSSystemExtensionRequest.Result) {
         report(result == .completed ?
-            "Системный запрос выполнен. Это не подтверждение сетевой защиты." :
-            "Для завершения системного запроса нужна перезагрузка.")
+            NSLocalizedString("requestCompleted", comment: "") :
+            NSLocalizedString("rebootNeeded", comment: ""))
     }
 
     func request(_ request: OSSystemExtensionRequest, didFailWithError error: Error) {
-        report("Системный запрос отклонён: \(error.localizedDescription)")
+        report(String(format: NSLocalizedString("requestFailed", comment: ""), error.localizedDescription))
     }
 
     func request(_ request: OSSystemExtensionRequest,
                  actionForReplacingExtension existing: OSSystemExtensionProperties,
                  withExtension ext: OSSystemExtensionProperties) -> OSSystemExtensionRequest.ReplacementAction {
-        // Seamless replacement is not validated in this prototype.
-        return .cancel
+        // Only upgrade this lab's own extension. SystemExtensions validates its
+        // signing team; never replace an unrelated identifier or downgrade.
+        guard existing.bundleIdentifier == extensionID,
+              ext.bundleIdentifier == extensionID,
+              existing.bundleVersion.compare(ext.bundleVersion, options: .numeric) == .orderedAscending
+        else { return .cancel }
+        return .replace
     }
 }
 

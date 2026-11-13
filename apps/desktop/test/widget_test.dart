@@ -1,7 +1,8 @@
+import 'package:vpn_guard/features/protection/domain/guard_backend.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:vpn_guard/main.dart';
-import 'package:vpn_guard/platform/guard_backend.dart';
+import 'package:vpn_guard/app/vpn_guard_app.dart';
+import 'package:vpn_guard/features/protection/data/native_guard_backend.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +39,7 @@ void main() {
             (_) async => {'state': 'ALLOWED'},
           );
       final report = await const NativeGuardBackend().inspect();
-      expect(report.code, 'unsupported_backend_protocol');
+      expect(report.issue, BackendIssue.unsupportedProtocol);
     },
   );
 
