@@ -1,0 +1,16 @@
+.DS_Store
+.build/
+.swiftpm/
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.mobileprovision
+*.provisionprofile
+*.p12
+*.pem
+*.pcap
+*.pcapng
+__pycache__/
+.env
+
