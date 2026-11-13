@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "org.vpnguard" "\0"
-            VALUE "FileDescription", "vpn_guard" "\0"
+            VALUE "FileDescription", "VPN Guard" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "vpn_guard" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 org.vpnguard. All rights reserved." "\0"
             VALUE "OriginalFilename", "vpn_guard.exe" "\0"
-            VALUE "ProductName", "vpn_guard" "\0"
+            VALUE "ProductName", "VPN Guard" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
